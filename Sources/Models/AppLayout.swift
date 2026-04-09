@@ -1,4 +1,7 @@
 import Foundation
+import os
+
+private let logger = Logger(subsystem: "com.cryptocharts", category: "Settings")
 
 enum GridLayout: String, Codable, CaseIterable, Identifiable {
     case oneByTwo = "1x2"
@@ -50,16 +53,23 @@ struct AppSettings: Codable {
     )
 
     static func load() -> AppSettings {
-        guard let data = UserDefaults.standard.data(forKey: "appSettings"),
-              let settings = try? JSONDecoder().decode(AppSettings.self, from: data) else {
+        guard let data = UserDefaults.standard.data(forKey: "appSettings") else {
             return .defaultSettings
         }
-        return settings
+        do {
+            return try JSONDecoder().decode(AppSettings.self, from: data)
+        } catch {
+            logger.error("Failed to decode settings, resetting to defaults: \(error.localizedDescription)")
+            return .defaultSettings
+        }
     }
 
     func save() {
-        if let data = try? JSONEncoder().encode(self) {
+        do {
+            let data = try JSONEncoder().encode(self)
             UserDefaults.standard.set(data, forKey: "appSettings")
+        } catch {
+            logger.error("Failed to save settings: \(error.localizedDescription)")
         }
     }
 }

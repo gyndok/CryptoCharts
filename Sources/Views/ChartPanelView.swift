@@ -3,7 +3,7 @@ import SwiftUI
 struct ChartPanelView: View {
     @ObservedObject var viewModel: ChartPanelViewModel
     let allPairs: [TradingPair]
-    var onAddCustomPair: ((String) -> Void)?
+    var onAddCustomPair: ((String) -> TradingPair?)?
 
     var body: some View {
         VStack(spacing: 0) {

@@ -1,6 +1,10 @@
 import Foundation
+import os
+
+private let logger = Logger(subsystem: "com.cryptocharts", category: "WebSocket")
 
 actor KrakenWebSocket {
+    private var session: URLSession?
     private var task: URLSessionWebSocketTask?
     private var continuation: AsyncStream<Candle>.Continuation?
     private var isConnected = false
@@ -8,6 +12,12 @@ actor KrakenWebSocket {
     private var currentSymbol: String?
     private var currentInterval: Int?
     private var reconnectDelay: TimeInterval = 3
+
+    private static let dateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return formatter
+    }()
 
     func connect(symbol: String, interval: Int) -> AsyncStream<Candle> {
         disconnect()
@@ -30,6 +40,8 @@ actor KrakenWebSocket {
         isConnected = false
         task?.cancel(with: .goingAway, reason: nil)
         task = nil
+        session?.invalidateAndCancel()
+        session = nil
         continuation?.finish()
         continuation = nil
     }
@@ -41,13 +53,13 @@ actor KrakenWebSocket {
             return
         }
 
-        let session = URLSession(configuration: .default)
-        let wsTask = session.webSocketTask(with: url)
+        let urlSession = URLSession(configuration: .default)
+        self.session = urlSession
+        let wsTask = urlSession.webSocketTask(with: url)
         self.task = wsTask
         wsTask.resume()
-        isConnected = true
 
-        // Subscribe to OHLC channel after connection
+        // Subscribe to OHLC channel — connection confirmed by first successful send
         let subscribeMsg: [String: Any] = [
             "method": "subscribe",
             "params": [
@@ -59,10 +71,42 @@ actor KrakenWebSocket {
 
         if let data = try? JSONSerialization.data(withJSONObject: subscribeMsg),
            let text = String(data: data, encoding: .utf8) {
-            wsTask.send(.string(text)) { _ in }
+            wsTask.send(.string(text)) { [weak self] error in
+                Task {
+                    guard let self else { return }
+                    if let error {
+                        logger.error("WebSocket subscribe send failed: \(error.localizedDescription)")
+                        await self.handleConnectionFailure()
+                    } else {
+                        await self.markConnected()
+                    }
+                }
+            }
         }
 
         Task { receiveLoop() }
+    }
+
+    private func markConnected() {
+        isConnected = true
+        reconnectDelay = 3
+        logger.info("WebSocket connected for \(self.currentSymbol ?? "unknown")")
+    }
+
+    private func handleConnectionFailure() {
+        isConnected = false
+        guard shouldReconnect else { return }
+        Task {
+            do {
+                try await Task.sleep(for: .seconds(reconnectDelay))
+                reconnectDelay = min(reconnectDelay * 2, 30)
+                if shouldReconnect {
+                    establishConnection()
+                }
+            } catch {
+                // Task cancelled — stop reconnecting
+            }
+        }
     }
 
     private func receiveLoop() {
@@ -70,8 +114,11 @@ actor KrakenWebSocket {
 
         Task {
             do {
-                while isConnected {
+                while shouldReconnect {
                     let message = try await task.receive()
+                    if !isConnected {
+                        markConnected()
+                    }
                     switch message {
                     case .string(let text):
                         if let candle = parseOHLCMessage(text) {
@@ -86,13 +133,20 @@ actor KrakenWebSocket {
                         break
                     }
                 }
+            } catch is CancellationError {
+                return
             } catch {
+                logger.warning("WebSocket receive error: \(error.localizedDescription)")
                 guard shouldReconnect else { return }
                 isConnected = false
-                try? await Task.sleep(for: .seconds(reconnectDelay))
-                reconnectDelay = min(reconnectDelay * 2, 30)
-                if shouldReconnect {
-                    establishConnection()
+                do {
+                    try await Task.sleep(for: .seconds(reconnectDelay))
+                    reconnectDelay = min(reconnectDelay * 2, 30)
+                    if shouldReconnect {
+                        establishConnection()
+                    }
+                } catch {
+                    // Task cancelled during reconnect delay — stop
                 }
             }
         }
@@ -124,9 +178,7 @@ actor KrakenWebSocket {
             return nil
         }
 
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-        guard let openTime = formatter.date(from: intervalBegin) else { return nil }
+        guard let openTime = Self.dateFormatter.date(from: intervalBegin) else { return nil }
 
         let closeTime = openTime.addingTimeInterval(TimeInterval(interval * 60))
         let msgType = json["type"] as? String ?? "update"

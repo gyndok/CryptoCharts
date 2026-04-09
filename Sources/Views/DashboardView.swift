@@ -16,7 +16,7 @@ struct DashboardView: View {
                         viewModel: panel,
                         allPairs: viewModel.allPairs,
                         onAddCustomPair: { symbol in
-                            viewModel.addCustomPair(symbol: symbol)
+                            return viewModel.addCustomPair(symbol: symbol)
                         }
                     )
                     .frame(minHeight: 300)
@@ -29,11 +29,8 @@ struct DashboardView: View {
                 LayoutSelectorView(layout: $viewModel.layout)
             }
         }
-        .onAppear {
+        .task {
             viewModel.startAll()
-        }
-        .onDisappear {
-            viewModel.stopAll()
         }
     }
 }

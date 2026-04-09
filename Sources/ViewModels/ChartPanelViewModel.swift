@@ -1,5 +1,8 @@
 import Foundation
 import SwiftUI
+import os
+
+private let logger = Logger(subsystem: "com.cryptocharts", category: "ChartPanel")
 
 @MainActor
 final class ChartPanelViewModel: ObservableObject, Identifiable {
@@ -13,6 +16,7 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
 
     private var webSocket = KrakenWebSocket()
     private var streamTask: Task<Void, Never>?
+    private var isStarted = false
 
     var onConfigChanged: (() -> Void)?
 
@@ -29,6 +33,7 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
     func start() {
         stop()
         isLoading = true
+        isStarted = true
         error = nil
 
         streamTask = Task {
@@ -39,11 +44,15 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
                     interval: interval.rawValue,
                     limit: Constants.maxCandles
                 )
+                try Task.checkCancellation()
                 self.candles = historical
                 self.isLoading = false
+            } catch is CancellationError {
+                return
             } catch {
                 self.error = error.localizedDescription
                 self.isLoading = false
+                logger.error("Failed to fetch OHLC for \(self.pair.symbol): \(error.localizedDescription)")
                 return
             }
 
@@ -52,9 +61,12 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
                 symbol: pair.symbol,
                 interval: interval.rawValue
             )
+
+            guard !Task.isCancelled else { return }
             self.isConnected = true
 
             for await candle in stream {
+                guard !Task.isCancelled else { break }
                 self.updateCandle(candle)
             }
 
@@ -63,10 +75,16 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
     }
 
     func stop() {
+        isStarted = false
         streamTask?.cancel()
         streamTask = nil
         Task { await webSocket.disconnect() }
         isConnected = false
+    }
+
+    func startIfNeeded() {
+        guard !isStarted else { return }
+        start()
     }
 
     func changePair(_ newPair: TradingPair) {
@@ -86,14 +104,12 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
     private func updateCandle(_ incoming: Candle) {
         if let lastIndex = candles.indices.last,
            candles[lastIndex].openTime == incoming.openTime {
-            // Update existing candle in place
             candles[lastIndex].high = incoming.high
             candles[lastIndex].low = incoming.low
             candles[lastIndex].close = incoming.close
             candles[lastIndex].volume = incoming.volume
             candles[lastIndex].isClosed = incoming.isClosed
         } else {
-            // New candle
             candles.append(incoming)
             if candles.count > Constants.maxCandles {
                 candles.removeFirst(candles.count - Constants.maxCandles)

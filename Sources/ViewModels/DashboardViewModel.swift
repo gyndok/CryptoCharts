@@ -1,5 +1,8 @@
 import Foundation
 import SwiftUI
+import os
+
+private let logger = Logger(subsystem: "com.cryptocharts", category: "Dashboard")
 
 @MainActor
 final class DashboardViewModel: ObservableObject {
@@ -18,7 +21,6 @@ final class DashboardViewModel: ObservableObject {
         self.layout = settings.layout
         self.customPairs = settings.customPairs
 
-        // Create panel VMs from saved configs
         self.panels = settings.panels.map { config in
             let vm = ChartPanelViewModel(config: config)
             vm.onConfigChanged = { [weak self] in self?.save() }
@@ -30,7 +32,7 @@ final class DashboardViewModel: ObservableObject {
 
     func startAll() {
         for panel in panels {
-            panel.start()
+            panel.startIfNeeded()
         }
     }
 
@@ -40,11 +42,13 @@ final class DashboardViewModel: ObservableObject {
         }
     }
 
-    func addCustomPair(symbol: String) {
+    @discardableResult
+    func addCustomPair(symbol: String) -> TradingPair? {
         let cleaned = symbol.trimmingCharacters(in: .whitespaces).uppercased()
-        guard !allPairs.contains(where: { $0.symbol == cleaned || $0.restPair == cleaned }) else { return }
+        if let existing = allPairs.first(where: { $0.symbol == cleaned || $0.restPair == cleaned }) {
+            return existing
+        }
 
-        // Kraken format: "LINK/USD" or just "LINKUSD"
         let base: String
         let quote: String
         let wsSymbol: String
@@ -71,6 +75,8 @@ final class DashboardViewModel: ObservableObject {
         let pair = TradingPair(symbol: wsSymbol, restPair: restPair, baseAsset: base, quoteAsset: quote)
         customPairs.append(pair)
         save()
+        logger.info("Added custom pair: \(wsSymbol)")
+        return pair
     }
 
     func save() {

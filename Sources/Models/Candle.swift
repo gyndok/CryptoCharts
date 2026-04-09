@@ -1,7 +1,7 @@
 import Foundation
 
-struct Candle: Identifiable {
-    let id: UUID
+struct Candle: Identifiable, Equatable {
+    var id: Date { openTime }
     let openTime: Date
     var open: Double
     var high: Double
@@ -14,7 +14,6 @@ struct Candle: Identifiable {
     var isBullish: Bool { close >= open }
 
     init(
-        id: UUID = UUID(),
         openTime: Date,
         open: Double,
         high: Double,
@@ -24,7 +23,6 @@ struct Candle: Identifiable {
         closeTime: Date,
         isClosed: Bool = true
     ) {
-        self.id = id
         self.openTime = openTime
         self.open = open
         self.high = high

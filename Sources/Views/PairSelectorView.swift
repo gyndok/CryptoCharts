@@ -3,7 +3,7 @@ import SwiftUI
 struct PairSelectorView: View {
     @Binding var selectedPair: TradingPair
     let allPairs: [TradingPair]
-    var onAddCustom: ((String) -> Void)?
+    var onAddCustom: ((String) -> TradingPair?)?
 
     @State private var customSymbol = ""
     @State private var showingCustomInput = false
@@ -54,10 +54,7 @@ struct PairSelectorView: View {
     private func addCustom() {
         let symbol = customSymbol.trimmingCharacters(in: .whitespaces)
         guard !symbol.isEmpty else { return }
-        onAddCustom?(symbol)
-        // The pair was added to allPairs by the callback — find and select it
-        let upper = symbol.uppercased()
-        if let pair = allPairs.first(where: { $0.symbol.uppercased() == upper || $0.restPair.uppercased() == upper }) {
+        if let pair = onAddCustom?(symbol) {
             selectedPair = pair
         }
         customSymbol = ""
