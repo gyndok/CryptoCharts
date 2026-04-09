@@ -1,0 +1,567 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.CryptoCharts-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/sources",
+      "importPath" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/App/CryptoChartsApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/AppLayout.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/Candle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/ChartInterval.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/PanelConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/TradingPair.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceAPI.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceWebSocket.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Utilities/Constants.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/ChartPanelViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/DashboardViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/CandlestickChartView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/ChartPanelView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/DashboardView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/IntervalSelectorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/LayoutSelectorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/PairSelectorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "CryptoCharts",
+      "moduleOutputPath" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/Modules/CryptoCharts.swiftmodule",
+      "objects" : [
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/CryptoChartsApp.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/AppLayout.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/Candle.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartInterval.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/PanelConfig.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/TradingPair.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/BinanceAPI.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/BinanceWebSocket.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/Constants.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartPanelViewModel.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/DashboardViewModel.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/CandlestickChartView.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartPanelView.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/DashboardView.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/IntervalSelectorView.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/LayoutSelectorView.swift.o",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/PairSelectorView.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "CryptoCharts_main",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "cryptocharts"
+      ],
+      "outputFileMapPath" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/CryptoChartsApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/AppLayout.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/Candle.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartInterval.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/PanelConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/TradingPair.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/BinanceAPI.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/BinanceWebSocket.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/Constants.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartPanelViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/DashboardViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/CandlestickChartView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartPanelView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/DashboardView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/IntervalSelectorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/LayoutSelectorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/PairSelectorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/Modules/CryptoCharts.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/App/CryptoChartsApp.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/AppLayout.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/Candle.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/ChartInterval.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/PanelConfig.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/TradingPair.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceAPI.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceWebSocket.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Utilities/Constants.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/ChartPanelViewModel.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/DashboardViewModel.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/CandlestickChartView.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/ChartPanelView.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/DashboardView.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/IntervalSelectorView.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/LayoutSelectorView.swift",
+        "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/PairSelectorView.swift"
+      ],
+      "tempsPath" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "CryptoCharts" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CryptoCharts",
+      "-package-name",
+      "cryptocharts",
+      "-c",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/App/CryptoChartsApp.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/AppLayout.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/Candle.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/ChartInterval.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/PanelConfig.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/TradingPair.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceAPI.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceWebSocket.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Utilities/Constants.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/ChartPanelViewModel.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/DashboardViewModel.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/CandlestickChartView.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/ChartPanelView.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/DashboardView.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/IntervalSelectorView.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/LayoutSelectorView.swift",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/PairSelectorView.swift",
+      "-I",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "CryptoCharts_main",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "cryptocharts",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "CryptoCharts" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts-entitlement.plist"
+    },
+    "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/App/CryptoChartsApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/AppLayout.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/Candle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/ChartInterval.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/PanelConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/TradingPair.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceAPI.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceWebSocket.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Utilities/Constants.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/ChartPanelViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/DashboardViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/CandlestickChartView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/ChartPanelView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/DashboardView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/IntervalSelectorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/LayoutSelectorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/PairSelectorView.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/sources"
+    },
+    "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/AppLayout.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/BinanceAPI.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/BinanceWebSocket.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/Candle.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/CandlestickChartView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartInterval.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartPanelView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/ChartPanelViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/Constants.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/CryptoChartsApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/DashboardView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/DashboardViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/IntervalSelectorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/LayoutSelectorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/PairSelectorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/PanelConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.build/TradingPair.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/CryptoCharts.product/Objects.LinkFileList"
+    },
+    "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

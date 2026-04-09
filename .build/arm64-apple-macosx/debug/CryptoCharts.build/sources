@@ -1,0 +1,17 @@
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/App/CryptoChartsApp.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/AppLayout.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/Candle.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/ChartInterval.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/PanelConfig.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Models/TradingPair.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceAPI.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Networking/BinanceWebSocket.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Utilities/Constants.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/ChartPanelViewModel.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/ViewModels/DashboardViewModel.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/CandlestickChartView.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/ChartPanelView.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/DashboardView.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/IntervalSelectorView.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/LayoutSelectorView.swift
+/Users/geffreyklein/Projects/crypto/.claude/worktrees/angry-hermann/CryptoCharts/Sources/Views/PairSelectorView.swift
