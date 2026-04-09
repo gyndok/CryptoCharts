@@ -11,7 +11,7 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
     @Published var error: String?
     @Published var isConnected = false
 
-    private var webSocket = BinanceWebSocket()
+    private var webSocket = KrakenWebSocket()
     private var streamTask: Task<Void, Never>?
 
     var onConfigChanged: (() -> Void)?
@@ -34,8 +34,8 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
         streamTask = Task {
             // Fetch history
             do {
-                let historical = try await BinanceAPI.fetchKlines(
-                    symbol: pair.symbol,
+                let historical = try await KrakenAPI.fetchOHLC(
+                    pair: pair.restPair,
                     interval: interval.rawValue,
                     limit: Constants.maxCandles
                 )
@@ -49,7 +49,7 @@ final class ChartPanelViewModel: ObservableObject, Identifiable {
 
             // Subscribe to live updates
             let stream = await webSocket.connect(
-                symbol: pair.wsSymbol,
+                symbol: pair.symbol,
                 interval: interval.rawValue
             )
             self.isConnected = true

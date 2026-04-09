@@ -41,30 +41,34 @@ final class DashboardViewModel: ObservableObject {
     }
 
     func addCustomPair(symbol: String) {
-        let upper = symbol.uppercased()
-        guard !allPairs.contains(where: { $0.symbol == upper }) else { return }
+        let cleaned = symbol.trimmingCharacters(in: .whitespaces).uppercased()
+        guard !allPairs.contains(where: { $0.symbol == cleaned || $0.restPair == cleaned }) else { return }
 
-        // Try to split: assume quote is USDT if not obvious
+        // Kraken format: "LINK/USD" or just "LINKUSD"
         let base: String
         let quote: String
-        if upper.hasSuffix("USDT") {
-            base = String(upper.dropLast(4))
-            quote = "USDT"
-        } else if upper.hasSuffix("BTC") {
-            base = String(upper.dropLast(3))
-            quote = "BTC"
-        } else if upper.hasSuffix("ETH") {
-            base = String(upper.dropLast(3))
-            quote = "ETH"
-        } else if upper.hasSuffix("BUSD") {
-            base = String(upper.dropLast(4))
-            quote = "BUSD"
+        let wsSymbol: String
+        let restPair: String
+
+        if cleaned.contains("/") {
+            let parts = cleaned.split(separator: "/")
+            base = String(parts[0])
+            quote = parts.count > 1 ? String(parts[1]) : "USD"
+            wsSymbol = "\(base)/\(quote)"
+            restPair = "\(base)\(quote)"
+        } else if cleaned.hasSuffix("USD") {
+            base = String(cleaned.dropLast(3))
+            quote = "USD"
+            wsSymbol = "\(base)/\(quote)"
+            restPair = cleaned
         } else {
-            base = upper
-            quote = "USDT"
+            base = cleaned
+            quote = "USD"
+            wsSymbol = "\(base)/\(quote)"
+            restPair = "\(base)USD"
         }
 
-        let pair = TradingPair(symbol: upper, baseAsset: base, quoteAsset: quote)
+        let pair = TradingPair(symbol: wsSymbol, restPair: restPair, baseAsset: base, quoteAsset: quote)
         customPairs.append(pair)
         save()
     }

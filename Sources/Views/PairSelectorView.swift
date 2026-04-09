@@ -36,7 +36,7 @@ struct PairSelectorView: View {
             VStack(spacing: 12) {
                 Text("Custom Trading Pair")
                     .font(.headline)
-                TextField("e.g. PEPEUSDT", text: $customSymbol)
+                TextField("e.g. LINK/USD", text: $customSymbol)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 200)
                     .onSubmit { addCustom() }
@@ -55,17 +55,10 @@ struct PairSelectorView: View {
         let symbol = customSymbol.trimmingCharacters(in: .whitespaces)
         guard !symbol.isEmpty else { return }
         onAddCustom?(symbol)
-        // Find and select the new pair
-        if let pair = allPairs.first(where: { $0.symbol == symbol.uppercased() }) {
+        // The pair was added to allPairs by the callback — find and select it
+        let upper = symbol.uppercased()
+        if let pair = allPairs.first(where: { $0.symbol.uppercased() == upper || $0.restPair.uppercased() == upper }) {
             selectedPair = pair
-        } else {
-            // It was just added, construct it
-            let upper = symbol.uppercased()
-            if upper.hasSuffix("USDT") {
-                selectedPair = TradingPair(symbol: upper, baseAsset: String(upper.dropLast(4)), quoteAsset: "USDT")
-            } else {
-                selectedPair = TradingPair(symbol: upper, baseAsset: upper, quoteAsset: "USDT")
-            }
         }
         customSymbol = ""
         showingCustomInput = false
